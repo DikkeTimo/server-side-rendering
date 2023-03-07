@@ -15,13 +15,12 @@ app.use(express.static("public"));
 
 // Create a route for the index page
 app.get("/", function (request, response) {
-  let slug = request.query.squad || "squad-a-2022";
+  // let slug = request.query.squad || "squad-a-2022";
   let orderBy = request.query.orderBy || "name" + "&direction=ASC";
-  let squadUrl = url + slug + "?orderBy=" + orderBy + "&direction=ASC";
-
-  fetchJson(squadUrl).then((data) => {
-    response.render("index", data);
-  });
+  // let squadUrl = url + slug + "?orderBy=" + orderBy + "&direction=ASC";
+  // fetchJson(squadUrl).then((data) => {
+  //   response.render("index", data);
+  // });
 });
 
 // Set the port number and start the server
@@ -30,8 +29,8 @@ app.listen(port, () => {
   console.log(`Application available on: http://localhost:${port}`);
 });
 
-async function fetchJson(url) {
-  return await fetch(url)
-    .then((response) => response.json())
-    .catch((error) => error);
-}
+// async function fetchJson(url) {
+//   return await fetch(url)
+//     .then((response) => response.json())
+//     .catch((error) => error);
+// }
