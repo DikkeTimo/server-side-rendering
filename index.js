@@ -15,12 +15,7 @@ app.use(express.static("public"));
 
 // Create a route for the index page
 app.get("/", function (request, response) {
-  // let slug = request.query.squad || "squad-a-2022";
-  let orderBy = request.query.orderBy || "name" + "&direction=ASC";
-  // let squadUrl = url + slug + "?orderBy=" + orderBy + "&direction=ASC";
-  // fetchJson(squadUrl).then((data) => {
-  //   response.render("index", data);
-  // });
+  response.render("index");
 });
 
 // Set the port number and start the server
