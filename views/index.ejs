@@ -11,10 +11,62 @@
 
 <main>
   <div class="scored">
-    <div class="teamleft"></div>
+    <div class="teamleft">
+      <table cellspacing="0" cellpadding="0">
+        <thead>
+          <tr>
+            <th>Pass</th>
+            <th>Turn</th>
+            <th>O/D</th>
+          </tr>
+        </thead>
+        <tbody>
+          <%# Point item team 1 %>
+          <tr class="score-info-team-1">
+            <td>3</td>
+            <td>0</td>
+            <td>O</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
     <span class="border"></span>
-    <div class="teamright"></div>
+
+    <div class="teamright">
+      <table cellspacing="0" cellpadding="0">
+        <thead>
+          <tr>
+            <th>Pass</th>
+            <th>Turn</th>
+            <th>O/D</th>
+          </tr>
+        </thead>
+        <tbody>
+          <%# Point item team 1 %>
+          <tr class="score-info-team-2">
+            <td>0</td>
+            <td>0</td>
+            <td>O</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
 </main>
+
+<footer>
+  <div class="players-left">
+    <h3>Players</h3>
+    <p>Name....</p>
+  </div>
+  <div class="stats">
+    <h3>Score</h3>
+  </div>
+  <div class="players-right">
+    <h3>Players</h3>
+    <p>Name....</p>
+  </div>
+</footer>
 
 <%- include('./partials/foot') %>
