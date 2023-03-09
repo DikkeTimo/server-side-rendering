@@ -39,7 +39,6 @@ header {
 
 main {
   width: 100%;
-  height: 25rem;
   margin-top: 1rem;
 }
 
@@ -52,7 +51,7 @@ main {
 .teamleft {
   background-color: #c0caff;
   width: 50%;
-  height: 25rem;
+  height: 15rem;
 }
 
 table {
@@ -71,14 +70,14 @@ td {
 }
 
 .border {
-  height: 25rem;
+  height: 15rem;
   border: solid #fff 0.5rem;
 }
 
 .teamright {
   background-color: #c0caff;
   width: 50%;
-  height: 25rem;
+  height: 15rem;
 }
 
 .score-info-team-2 {

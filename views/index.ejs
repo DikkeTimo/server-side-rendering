@@ -3,9 +3,9 @@
 <header>
   <span class="fi fi-bq"> </span>
   <div class="score">
-    <p><%=field%></p>
-    <h2>0-0</h2>
-    <h4>VS</h4>
+    <h2><%=data2.team1Score %>-<%=data2.team2Score %></h2>
+    <p><%=data1.field %></p>
+    <h3>VS</h3>
   </div>
   <span class="fi fi-gr"></span>
 </header>
@@ -24,9 +24,13 @@
         <tbody>
           <%# Point item team 1 %>
           <tr class="score-info-team-1">
-            <td>3</td>
-            <td>0</td>
-            <td>O</td>
+            <% data2.scoredPoints.forEach(point => { %>
+              <tr class="score-info-team-1 green">
+                  <td><%= point.team1Passes %></td>
+                  <td><%= point.team1Turnovers %></td>
+                  <td><%= point.team1OorD %></td>
+              </tr>
+          <% }) %>
           </tr>
         </tbody>
       </table>
@@ -44,12 +48,15 @@
           </tr>
         </thead>
         <tbody>
-          <%# Point item team 1 %>
+          <%# Point item team 2 %>
           <tr class="score-info-team-2">
-            <td>0</td>
-            <td>0</td>
-            <td>O</td>
-          </tr>
+            <% data2.scoredPoints.forEach(point => { %>
+              <tr class="score-info-team-2 green">
+                  <td><%= point.team2Passes %></td>
+                  <td><%= point.team2Turnovers %></td>
+                  <td><%= point.team2OorD %></td>
+              </tr>
+          <% }) %>
         </tbody>
       </table>
     </div>
@@ -59,18 +66,21 @@
 <footer>
   <div class="players-left">
     <h3>Players</h3>
-    <% team1Players.forEach(players => { %>
+    <% data1.team1Players.forEach(players => { %>
     <p><%= players.name %><span id="number"><%=players.jerseyNumber%></span></p>
     <% }) %>
   </div>
 
   <div class="stats">
     <h3>Score</h3>
+    <% data2.scoredPoints.forEach(scored => { %>
+     <p><%= scored.scoredBy %></p>
+    <% }) %>
   </div>
 
   <div class="players-right">
     <h3>Players</h3>
-    <% team2Players.forEach(players => { %>
+    <% data1.team2Players.forEach(players => { %>
     <p><%= players.name %> <span id="number"><%=players.jerseyNumber%></span></p>
     <% }) %>
   </div>
