@@ -1,10 +1,11 @@
 <%- include('./partials/head') %>
 
 <header>
-  <span class="fi fi-bq"></span>
+  <span class="fi fi-bq"> </span>
   <div class="score">
-    <h2>10-1</h2>
-    <span>VS</span>
+    <p><%=field%></p>
+    <h2>0-0</h2>
+    <h4>VS</h4>
   </div>
   <span class="fi fi-gr"></span>
 </header>
@@ -58,14 +59,20 @@
 <footer>
   <div class="players-left">
     <h3>Players</h3>
-    <p>Name....</p>
+    <% team1Players.forEach(players => { %>
+    <p><%= players.name %><span id="number"><%=players.jerseyNumber%></span></p>
+    <% }) %>
   </div>
+
   <div class="stats">
     <h3>Score</h3>
   </div>
+
   <div class="players-right">
     <h3>Players</h3>
-    <p>Name....</p>
+    <% team2Players.forEach(players => { %>
+    <p><%= players.name %> <span id="number"><%=players.jerseyNumber%></span></p>
+    <% }) %>
   </div>
 </footer>
 
