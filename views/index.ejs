@@ -1,4 +1,8 @@
-<%- include('./partials/head') %>
+<%- include('./partials/head')%>
+
+<% let allPlayers = [...data1.team1Players, ...data1.team2Players] 
+console.log(allPlayers)
+%>
 
 <header>
   <span class="fi fi-bq"> </span>
@@ -25,13 +29,20 @@
           <%# Point item team 1 %>
           <tr class="score-info-team-1">
             <% data2.scoredPoints.forEach(point => { %>
-              <tr class="score-info-team-1 green">
-                  <td><%= point.team1Passes %></td>
-                  <td><%= point.team1Turnovers %></td>
-                  <td><%= point.team1OorD %></td>
-              </tr>
-          <% }) %>
+            <%if(point.scored===point.team1Name) { %>
           </tr>
+          <tr class="score-info-team-1 green">
+            <td><%= point.team1Passes %></td>
+            <td><%= point.team1Turnovers %></td>
+            <td><%= point.team1OorD %></td>
+          </tr>
+          <% } else { %>
+          <tr class="score-info-team-1 red">
+            <td><%= point.team1Passes %></td>
+            <td><%= point.team1Turnovers %></td>
+            <td><%= point.team1OorD %></td>
+          </tr>
+          <% } %> <% }) %>
         </tbody>
       </table>
     </div>
@@ -50,13 +61,22 @@
         <tbody>
           <%# Point item team 2 %>
           <tr class="score-info-team-2">
-            <% data2.scoredPoints.forEach(point => { %>
-              <tr class="score-info-team-2 green">
-                  <td><%= point.team2Passes %></td>
-                  <td><%= point.team2Turnovers %></td>
-                  <td><%= point.team2OorD %></td>
-              </tr>
-          <% }) %>
+            <% data2.scoredPoints.forEach(point => { %> <% if(point.scored
+            ===point.team2Name) { %>
+          </tr>
+
+          <tr class="score-info-team-2 green">
+            <td><%= point.team2Passes %></td>
+            <td><%= point.team2Turnovers %></td>
+            <td><%= point.team2OorD %></td>
+          </tr>
+          <% } else { %>
+          <tr class="score-info-team-2 red">
+            <td><%= point.team1Passes %></td>
+            <td><%= point.team1Turnovers %></td>
+            <td><%= point.team1OorD %></td>
+          </tr>
+          <% } %> <% }) %>
         </tbody>
       </table>
     </div>
@@ -64,6 +84,7 @@
 </main>
 
 <footer>
+
   <div class="players-left">
     <h3>Players</h3>
     <% data1.team1Players.forEach(players => { %>
@@ -74,8 +95,12 @@
   <div class="stats">
     <h3>Score</h3>
     <% data2.scoredPoints.forEach(scored => { %>
-     <p><%= scored.scoredBy %></p>
-    <% }) %>
+      <% allPlayers.forEach(player => {%> 
+          <% if(scored.scoredBy === player.playerId){ %>
+            <p><%= player.name  %> - <%= scored.scoredBy %></p>
+          <% } %>
+      <% }) %>
+    <% }) %> 
   </div>
 
   <div class="players-right">
@@ -84,6 +109,7 @@
     <p><%= players.name %> <span id="number"><%=players.jerseyNumber%></span></p>
     <% }) %>
   </div>
+
 </footer>
 
 <%- include('./partials/foot') %>

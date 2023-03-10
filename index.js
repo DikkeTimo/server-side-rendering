@@ -34,7 +34,7 @@ app.get("/", async function (request, response) {
   const data = { data1, data2 };
   response.render("index", data);
 
-  console.log(data);
+  // console.log(data);
 });
 
 // Set the port number and start the server
@@ -47,5 +47,5 @@ async function fetchJson(urls) {
   return await fetch(urls)
     .then((response) => response.json())
     .catch((error) => error);
-  console.log(urls);
+  // console.log(urls);
 }
