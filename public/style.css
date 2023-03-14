@@ -70,6 +70,10 @@ table {
   background-color: rgb(224, 53, 53);
 }
 
+.red-dark {
+  background-color: rgb(85, 14, 14);
+}
+
 td {
   text-align: center;
 }
@@ -102,13 +106,18 @@ footer {
   padding: 1rem;
 }
 
+.players-left p:hover {
+  transition: 0.3s;
+  scale: 1.03;
+}
+
 .players-left,
 .players-right,
 .stats {
   padding-top: 1rem;
   text-align: center;
   width: 30%;
-  border: 1px solid;
+  border: 2px solid #fff;
   border-radius: var(--borderradius);
 }
 
@@ -125,4 +134,11 @@ footer {
   margin-top: 1rem;
   margin-bottom: 1rem;
   padding: 0.5rem;
+  transition: 0.3s;
+}
+
+dialog {
+  width: 25rem;
+  height: 25rem;
+  inset: 3%;
 }

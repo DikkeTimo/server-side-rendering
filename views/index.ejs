@@ -1,17 +1,43 @@
 <%- include('./partials/head')%>
 
 <% let allPlayers = [...data1.team1Players, ...data1.team2Players] 
-console.log(allPlayers)
+
+/*
+    "team1Players": [
+        {
+            "playerId": 8600,
+            "name": "Jon Smith",
+            "gender": "M",
+            "height": null,
+            "pronounced": null,
+            "pronouns": null,
+            "jerseyNumber": 1,
+            "hasInformation": false
+        },
+
+    "team2Players": [
+        {
+            "playerId": 8604,
+            "name": "Mike Walsh",
+            "gender": "M",
+            "height": null,
+            "pronounced": null,
+            "pronouns": null,
+            "jerseyNumber": 1,
+            "hasInformation": false
+        },
+
+*/
 %>
 
 <header>
-  <span class="fi fi-bq"> </span>
+  <span class="fi fi-nl"> </span>
   <div class="score">
     <h2><%=data2.team1Score %>-<%=data2.team2Score %></h2>
     <p><%=data1.field %></p>
     <h3>VS</h3>
   </div>
-  <span class="fi fi-gr"></span>
+  <span class="fi fi-au"></span>
 </header>
 
 <main>
@@ -29,20 +55,13 @@ console.log(allPlayers)
           <%# Point item team 1 %>
           <tr class="score-info-team-1">
             <% data2.scoredPoints.forEach(point => { %>
-            <%if(point.scored===point.team1Name) { %>
           </tr>
-          <tr class="score-info-team-1 green">
+          <tr class="score-info-team-1 <%= (point.scored===point.team1Name) ? 'green' : 'red' %>">
             <td><%= point.team1Passes %></td>
             <td><%= point.team1Turnovers %></td>
             <td><%= point.team1OorD %></td>
           </tr>
-          <% } else { %>
-          <tr class="score-info-team-1 red">
-            <td><%= point.team1Passes %></td>
-            <td><%= point.team1Turnovers %></td>
-            <td><%= point.team1OorD %></td>
-          </tr>
-          <% } %> <% }) %>
+         <% }) %>
         </tbody>
       </table>
     </div>
@@ -61,22 +80,14 @@ console.log(allPlayers)
         <tbody>
           <%# Point item team 2 %>
           <tr class="score-info-team-2">
-            <% data2.scoredPoints.forEach(point => { %> <% if(point.scored
-            ===point.team2Name) { %>
+            <% data2.scoredPoints.forEach(point => { %>
           </tr>
-
-          <tr class="score-info-team-2 green">
+          <tr class="score-info-team-2 <%= (point.scored===point.team2Name) ? 'green' : 'red' %>">
             <td><%= point.team2Passes %></td>
             <td><%= point.team2Turnovers %></td>
             <td><%= point.team2OorD %></td>
           </tr>
-          <% } else { %>
-          <tr class="score-info-team-2 red">
-            <td><%= point.team1Passes %></td>
-            <td><%= point.team1Turnovers %></td>
-            <td><%= point.team1OorD %></td>
-          </tr>
-          <% } %> <% }) %>
+           <% }) %>
         </tbody>
       </table>
     </div>
@@ -88,12 +99,19 @@ console.log(allPlayers)
   <div class="players-left">
     <h3>Players</h3>
     <% data1.team1Players.forEach(players => { %>
-    <p><%= players.name %><span id="number"><%=players.jerseyNumber%></span></p>
+    <p id="playerss">
+      <%= players.name %>
+      <span id="number"></span>
+      <%=players.jerseyNumber%>
+    </p>
     <% }) %>
   </div>
 
   <div class="stats">
     <h3>Score</h3>
+    <% /* Uit het tweede json file haal ik alle gescoorde punten, hiervoor gebruik ik een forEach loop.
+          En ik gebruik nog een 
+    */%>
     <% data2.scoredPoints.forEach(scored => { %>
       <% allPlayers.forEach(player => {%> 
           <% if(scored.scoredBy === player.playerId){ %>
@@ -109,6 +127,14 @@ console.log(allPlayers)
     <p><%= players.name %> <span id="number"><%=players.jerseyNumber%></span></p>
     <% }) %>
   </div>
+
+<dialog id="dialog">
+  <form method="dialog">
+      <p>
+          <p><%= title.title %></p>
+      </p>
+  </form>
+</dialog>
 
 </footer>
 

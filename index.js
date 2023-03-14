@@ -3,12 +3,10 @@ import express from "express";
 
 // Create a new Express app
 const app = express();
-// const url = "https://raw.githubusercontent.com/fdnd-agency/ultitv/main/api/game/943.json";
-// const url = "https://github.com/fdnd-agency/ultitv/blob/main/api/game/943.json";
-
 const urls = [
   "https://raw.githubusercontent.com/fdnd-agency/ultitv/main/api/game/943.json",
   "https://raw.githubusercontent.com/fdnd-agency/ultitv/main/api/game/943/statistics.json",
+  "https://raw.githubusercontent.com/fdnd-agency/ultitv/main/api/facts/Player/8607.json"
 ];
 
 // Set EJS as the template engine and specify the views directory
@@ -21,20 +19,12 @@ app.use(express.urlencoded({ extended: true }));
 // Serve static files from the public directory
 app.use(express.static("public"));
 
-// Create a route for the index page
-// app.get("/", function (request, response) {
-//   fetchJson(url).then((data) => {
-//     response.render("index", data);
-//     console.log(data);
-//   });
-// });
 
 app.get("/", async function (request, response) {
-  const [data1, data2] = await Promise.all(urls.map(fetchJson));
-  const data = { data1, data2 };
+  const [data1, data2, data3] = await Promise.all(urls.map(fetchJson));
+  const data = { data1, data2, data3 };
+  console.log(data3)
   response.render("index", data);
-
-  // console.log(data);
 });
 
 // Set the port number and start the server
