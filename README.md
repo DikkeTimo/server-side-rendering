@@ -34,11 +34,20 @@
 ## Kenmerken
 <!-- Bij Kenmerken staat welke technieken zijn gebruikt en hoe. Wat is de HTML structuur? Wat zijn de belangrijkste dingen in CSS? Wat is er met Javascript gedaan en hoe? Misschien heb je een framwork of library gebruikt? -->
 
+Deze website is gemaakt met node, express en ejs. Er worden uit drie verschillende json files data opgehaald.
+
 ## Installatie
 
+Download of clone dit project. In de root: npm install om alle packages te installeren en npm start om de website te starten.
 ## Gebruik
 
 ## Bronnen
+
+<ul>
+  <li>https://blog.logrocket.com/how-to-use-ejs-template-node-js-application/</li>
+  <li>https://expressjs.com/</li>
+  <li>https://nodejs.dev/en/learn/</li>
+</ul>
 
 ## Licentie
 
