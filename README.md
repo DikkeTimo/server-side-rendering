@@ -1,9 +1,7 @@
 <!-- > _Fork_ deze leertaak en ga aan de slag. Onderstaande outline ga je gedurende deze taak in jouw eigen GitHub omgeving uitwerken. De instructie vind je in: [docs/INSTRUCTIONS.md](docs/INSTRUCTIONS.md) -->
 
-# Titel
+# Pagina voor UltimateTv
 <!-- Geef je project een titel en schrijf in één zin wat het is -->
-
-<h1> Pagina voor UltimateTv  </h1>
 
 ## Inhoudsopgave
 
@@ -22,7 +20,15 @@
 <p>
   UltimateTv is een bedrijf die frisbee wedstrijden live op Youtube streamt en commentaar geeft tijdens de wedstijd. Mijn opdracht is om een nieuw design te maken van de huidige website. 
 
-  De pagina is te bezoeken via deze link: 
+  De pagina is te bezoeken via deze link: https://uninterested-bass-hose.cyclic.app/
+
+  User Story:
+
+  <img width="80%" alt="Scherm­afbeelding 2023-03-06 om 19 05 20" src="https://user-images.githubusercontent.com/62908209/223193686-0b9879e7-9dd8-4e60-a6a6-11e66f7d31e7.png">
+
+  <br>
+
+  <img width='60%' src='/views/ulti.tv.png'>
 </p>
 
 ## Kenmerken
