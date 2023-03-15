@@ -28,7 +28,7 @@
 
   <br>
 
-  <img width='60%' src='/views/ulti.tv.png'>
+  <img width='60%' src='./public/ulti.tv.png'>
 </p>
 
 ## Kenmerken
