@@ -100,7 +100,7 @@
     <h3>Players</h3>
     <% data1.team1Players.forEach(players => { %>
     <p id="playerss">
-      <%= players.name %>
+      <%= players.name %> 
       <span id="number"></span>
       <%=players.jerseyNumber%>
     </p>
@@ -130,9 +130,10 @@
 
 <dialog id="dialog">
   <form method="dialog">
-      <p>
-          <p><%= title.title %></p>
-      </p>
+    <% data3.forEach(info => { %>
+      <p id="title"><%= info.title %></p>
+       <p id="answer"><%= info.content %></p>
+    <% }) %>
   </form>
 </dialog>
 
