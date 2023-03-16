@@ -38,8 +38,10 @@ Deze website is gemaakt met node, express en ejs. Er worden uit drie verschillen
 
 ## Installatie
 
-Download of clone dit project. In de root: npm install om alle packages te installeren en npm start om de website te starten.
+Download of clone dit project. In de root: `npm install` om alle packages te installeren en `npm start` om de website te starten.
 ## Gebruik
+
+Op de website kun je de stats zien van de live wedstrijd. Je kunt op de spelers klikken voor extra informatie. 
 
 ## Bronnen
 
