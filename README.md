@@ -24,11 +24,11 @@
 
   User Story:
 
-  <img width="80%" alt="" src="./public/serverside.png">
+  <img width="80%" alt="Scherm­afbeelding 2023-03-06 om 19 05 20" src="https://user-images.githubusercontent.com/62908209/223193686-0b9879e7-9dd8-4e60-a6a6-11e66f7d31e7.png">
 
   <br>
 
-  <img width='60%' src='./public/ulti.tv.png'>
+  <img width="80%" alt="" src="./public/serverside.png">
 </p>
 
 ## Kenmerken
