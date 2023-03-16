@@ -1,6 +1,6 @@
-const players = document.getElementById('playerss')
-const dialog = document.getElementById('dialog')
+const players = document.querySelector(".playerss");
 
-players.addEventListener('click', () => {
+players.addEventListener("click", () => {
+  const dialog = document.getElementById("dialog");
   dialog.showModal();
 });

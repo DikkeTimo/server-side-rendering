@@ -1,0 +1,53 @@
+<% let allPlayers = [...data1.team1Players, ...data1.team2Players]
+
+/* "team1Players": [ {
+"playerId": 8600, "name": "Jon Smith", "gender": "M", "height": null, "pronounced": null,
+"pronouns": null, "jerseyNumber": 1, "hasInformation": false },
+
+"team2Players": [ {
+"playerId": 8604, "name": "Mike Walsh", "gender": "M", "height": null, "pronounced": null,
+"pronouns": null, "jerseyNumber": 1, "hasInformation": false }, 
+
+*/ %>
+
+<footer>
+  <div class="players-left">
+    <h3>Players</h3>
+    <% data1.team1Players.forEach(players => { %>
+    <p class="playerss">
+      <%= players.name %>
+      <span id="number"></span>
+      <%=players.jerseyNumber%>
+    </p>
+    <% }) %>
+  </div>
+
+  <div class="stats">
+    <h3>Score</h3>
+    <% /* Uit het tweede json file haal ik alle gescoorde punten, hiervoor gebruik ik een
+    forEach loop. En ik gebruik nog een */%>
+    <% data2.scoredPoints.forEach(scored => { %>
+      <% allPlayers.forEach(player => {%>
+        <% if(scored.scoredBy === player.playerId){ %>
+          <p><%= player.name %> - <%= scored.scoredBy %></p>
+        <% } %> 
+      <% }) %>
+    <% }) %>
+  </div>
+
+  <div class="players-right">
+    <h3>Players</h3>
+    <% data1.team2Players.forEach(players => { %>
+      <p><%= players.name %><span id="number"><%=players.jerseyNumber%></span></p>
+    <% }) %>
+  </div>
+
+  <dialog id="dialog">
+    <form method="dialog">
+      <% data3.forEach(info => { %>
+        <p id="title"><%= info.title %>:</p>
+        <p id="answer"><%= info.content %></p>
+      <% }) %>
+    </form>
+  </dialog>
+</footer>
