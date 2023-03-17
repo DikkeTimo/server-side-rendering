@@ -17,8 +17,10 @@
             <% data2.scoredPoints.forEach(point => { %>
           </tr>
           <tr
-            class="score-info-team-1 <%= (point.scored===point.team1Name) ? 'green' : 'red' %>"
-          >
+          <% /*Als het gescoorde punt voor team1 is veranderd de kleur naar groen, anders naar 
+              rood.
+          */%>
+            class="score-info-team-1 <%= (point.scored===point.team1Name) ? 'green' : 'red' %>">
             <td><%= point.team1Passes %></td>
             <td><%= point.team1Turnovers %></td>
             <td><%= point.team1OorD %></td>

@@ -67,7 +67,8 @@ table {
 }
 
 .red {
-  background-color: rgb(224, 53, 53);
+  color: white;
+  background-color: rgb(229, 17, 17);
 }
 
 .red-dark {
@@ -106,7 +107,8 @@ footer {
   padding: 1rem;
 }
 
-.players-left p:hover {
+.players-left p:hover,
+.players-right p:hover {
   transition: 0.3s;
   scale: 1.03;
 }
@@ -141,7 +143,7 @@ dialog {
   border-radius: var(--borderradiussmall);
   border: none;
   width: 25rem;
-  height: 25rem;
+  height: 30rem;
   inset: 3%;
 }
 

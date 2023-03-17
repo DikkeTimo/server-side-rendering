@@ -1,6 +1,6 @@
-const players = document.querySelector(".playerss");
+const players = document.querySelector(".players-left");
 
 players.addEventListener("click", () => {
-  const dialog = document.getElementById("dialog");
+  const dialog = document.querySelector("dialog");
   dialog.showModal();
 });

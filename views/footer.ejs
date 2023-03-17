@@ -24,12 +24,17 @@
 
   <div class="stats">
     <h3>Score</h3>
-    <% /* Uit het tweede json file haal ik alle gescoorde punten, hiervoor gebruik ik een
-    forEach loop. En ik gebruik nog een */%>
+    <% 
+    /* Uit het tweede json file haal ik alle gescoorde punten, hiervoor gebruik ik een
+    forEach loop. En ik gebruik een if statement om score op de juiste volgorde te laten zien. 
+
+    Hier onder heb ik team 1 en 2 samengevoegd zodat je data samen kan vergelijken :
+    let allPlayers = [...data1.team1Players, ...data1.team2Players]
+    */%>
     <% data2.scoredPoints.forEach(scored => { %>
       <% allPlayers.forEach(player => {%>
         <% if(scored.scoredBy === player.playerId){ %>
-          <p><%= player.name %> - <%= scored.scoredBy %></p>
+          <p><%= player.name %> <%= scored.scoredBy %></p>
         <% } %> 
       <% }) %>
     <% }) %>
@@ -42,7 +47,7 @@
     <% }) %>
   </div>
 
-  <dialog id="dialog">
+  <dialog class="dialog">
     <form method="dialog">
       <% data3.forEach(info => { %>
         <p id="title"><%= info.title %>:</p>
